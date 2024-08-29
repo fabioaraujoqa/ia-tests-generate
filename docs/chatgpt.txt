@@ -1,0 +1,84 @@
+Para criar o plano de teste completo e abrangente para o site do TDC 2024, aqui está uma estrutura básica que você pode seguir:
+
+### 1. **Plano de Teste Funcional (PDF)**
+Este documento incluirá:
+
+- **Introdução**: Contextualize o objetivo do plano de teste, mencionando o site do TDC 2024 e sua importância.
+- **Escopo do Teste**:
+  - **Funcionalidades Principais**: Navegação entre páginas, buscas, login, registro, submissão de formulários, etc.
+  - **Fluxos de Usuário**: Acesso à programação, inscrição em palestras, interação com patrocinadores, etc.
+- **Casos de Teste**:
+  - **Cenários Positivos e Negativos**: Por exemplo, verificar a navegação correta para cada menu, tentativa de login com credenciais inválidas, etc.
+  - **Passos de Execução e Dados de Teste**: Detalhamento dos passos para cada caso de teste.
+  - **Critérios de Aceitação**: Definição clara do que constitui sucesso ou falha para cada caso de teste.
+- **Ambientes de Teste**:
+  - Navegadores: Chrome, Firefox, Safari, Edge.
+  - Dispositivos: Desktop, tablet, mobile.
+  - Resoluções: Diferentes tamanhos de tela para testar a responsividade.
+- **Riscos e Dependências**: Ex.: Dependência da conexão com APIs externas para busca de palestrantes.
+- **Métricas de Sucesso**:
+  - Cobertura de testes, taxa de defeitos encontrados, taxa de sucesso em execuções automáticas, etc.
+
+### 2. **Projeto de Automação em Cypress**
+Organização do código:
+
+- **Estrutura do Projeto**:
+  - **'codigo_automacao/'**: Pasta raiz.
+  - **'tests/'**: Scripts de testes, por exemplo, `navigation_spec.js`, `login_spec.js`.
+  - **'fixtures/'**: Dados de teste, como JSONs contendo informações de usuários de teste.
+  - **'commands/'**: Comandos Cypress personalizados para facilitar a automação.
+  - **'plugins/'**: Configurações de plugins como Allure.
+- **Código Cypress**:
+  - **Testes de Navegação**: Verificação da navegação correta entre páginas.
+  - **Testes de Funcionalidades**: Login, logout, busca, submissão de formulários.
+  - **Cobertura de Teste**: Inclua casos de borda e cenários negativos.
+- **Integração com Allure**: Configuração necessária para relatórios avançados.
+- **Configuração de Variáveis de Ambiente**: `.env` para diferentes ambientes (desenvolvimento, homologação, produção).
+
+### 3. **Instruções de Execução (README.md)**
+O conteúdo incluirá:
+
+- **Configuração do Ambiente**: Passos para instalar Node.js, Cypress, etc.
+- **Execução dos Testes**: Comandos Cypress com exemplos práticos.
+- **Interpretação dos Resultados**: Como interpretar logs, relatórios Cypress e Allure.
+- **Configuração de CI/CD**: Passos para integração com GitHub Actions, por exemplo.
+
+### 4. **Plano de Testes de Performance (PDF)**
+Conteúdo:
+
+- **Testes de Carga**: Estratégia para simular muitos usuários simultâneos (ferramentas como JMeter ou k6).
+- **Testes de Estresse**: Identificação de limites e pontos de falha do site.
+- **Testes de Capacidade**: Medir o máximo de usuários suportados sem perda significativa de desempenho.
+- **Métricas de Performance**: Tempo de resposta, throughput, taxa de erros.
+
+### 5. **Plano de Testes de Segurança (PDF)**
+Este documento incluirá:
+
+- **Testes de Vulnerabilidade**: Ex.: SQL Injection, XSS, CSRF.
+- **Teste de Autenticação/Autorização**: Verificação de implementação correta.
+- **Teste de Penetração**: Estratégia para testar a resistência contra ataques.
+
+### 6. **Plano de Testes de Acessibilidade (PDF)**
+Este plano conterá:
+
+- **Conformidade com WCAG**: Verificação contra diretrizes de acessibilidade.
+- **Ferramentas de Acessibilidade**: Axe, Lighthouse, NVDA.
+- **Casos de Teste Acessíveis**: Testes de navegação por teclado, leitores de tela, etc.
+
+### 7. **Estratégia de Teste de Regressão**
+Inclua:
+
+- **Seleção de Casos de Teste**: Identificação de casos críticos para regressão.
+- **Automação de Regressão**: Scripts para validar se novas funcionalidades não quebram o que já foi implementado.
+- **Planejamento de Execução**: Frequência de execução (ex.: em cada Pull Request).
+
+### 8. **Documentação de Integração de APIs**
+Se aplicável, inclua:
+
+- **Testes de API Automatizados**: Validação de respostas de APIs.
+- **Testes de Contrato**: Garantir que as APIs seguem os contratos especificados.
+- **Testes de Carga em APIs**: Testar APIs sob carga com k6, por exemplo.
+
+Depois de criar esses artefatos, é fundamental garantir que todos os arquivos estejam organizados e acessíveis para fácil manutenção e execução dos testes. Além disso, você pode armazenar os relatórios e documentos PDF em uma estrutura de pastas que permita uma navegação intuitiva para revisão futura.
+
+Caso precise de mais detalhes específicos ou exemplos de como começar com alguma parte específica, estou à disposição para ajudar!

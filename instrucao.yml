@@ -1,0 +1,59 @@
+instrucao: |
+  Você como engenheiro de Qualidade Sênior em uma grande corporação, Sua tarefa é gerar um plano de teste completo e abrangente para o site https://www.google.com.br/. O plano de teste deve cobrir vários aspectos do processo de teste, resultando em múltiplos artefatos, conforme descrito abaixo:
+
+  1. **Plano de Teste Funcional (PDF)**:
+      - Gere um documento PDF detalhado contendo:
+        - **Casos de Teste**: Definições claras e concisas de casos de teste, incluindo cenários positivos e negativos, passos de execução, dados de teste, e critérios de aceitação.
+        - **Critérios de Aceitação**: Requisitos específicos que devem ser atendidos para que um teste seja considerado aprovado.
+        - **Escopo do Teste**: Descrição das funcionalidades, páginas, e fluxos de usuário que serão testados.
+        - **Ambientes de Teste**: Detalhes sobre os ambientes onde os testes serão executados (navegadores, dispositivos móveis, diferentes resoluções de tela, etc.).
+        - **Riscos e Dependências**: Identificação de potenciais riscos e dependências que possam impactar os testes.
+        - **Métricas de Sucesso**: Indicadores chave que serão usados para avaliar o sucesso dos testes (por exemplo, taxa de defeitos, cobertura de teste, etc.).
+
+  2. **Projeto de Automação em Cypress**:
+      - Crie um projeto de automação em Cypress que inclua:
+        - **Estrutura do Projeto**: Organize o código de automação em uma pasta chamada 'codigo_automacao' com subpastas para testes, fixtures, comandos personalizados e plugins.
+        - **Código Cypress**: Geração de scripts Cypress para validar funcionalidades principais, como navegação, busca, login e logout, submissão de formulários, e interações com elementos dinâmicos.
+        - **Cobertura de Teste**: Certifique-se de que a cobertura de teste abrange casos de borda, casos de erro, e cenários com dados dinâmicos.
+        - **Integração com Allure**: Inclua a configuração necessária para integrar o Cypress com Allure para relatórios avançados de teste.
+        - **Configuração de Variáveis de Ambiente**: Configure variáveis de ambiente no Cypress para suportar múltiplos ambientes (desenvolvimento, homologação, produção).
+
+  3. **Instruções de Execução (README.md)**:
+      - Gere um arquivo README.md com instruções detalhadas:
+        - **Configuração do Ambiente**: Passo a passo para configurar o ambiente de desenvolvimento e teste, incluindo instalação de Node.js, Cypress, e qualquer outra dependência necessária.
+        - **Execução dos Testes**: Comandos para rodar os testes de forma local e em um pipeline CI/CD, com exemplos de comandos Cypress (por exemplo, 'npx cypress run --env environment=staging').
+        - **Interpretação dos Resultados**: Orientações sobre como interpretar os resultados dos testes no terminal, no dashboard do Cypress, e nos relatórios gerados pelo Allure.
+        - **Configuração de CI/CD**: Instruções sobre como integrar os testes Cypress em uma pipeline CI/CD (por exemplo, usando GitHub Actions ou Jenkins).
+
+  4. **Plano de Testes de Performance (PDF)**:
+      - Crie um documento detalhando:
+        - **Testes de Carga**: Estratégias para testar a performance do site sob carga pesada, incluindo ferramentas recomendadas (por exemplo, JMeter, k6).
+        - **Testes de Estresse**: Como executar testes de estresse para identificar o ponto de falha do site.
+        - **Testes de Capacidade**: Definição de testes para medir a capacidade máxima do site sem degradação significativa da performance.
+        - **Métricas de Performance**: Indicadores chave como tempo de resposta, throughput, e taxa de erros.
+
+  5. **Plano de Testes de Segurança (PDF)**:
+      - Detalhe um plano de teste focado na segurança do site:
+        - **Testes de Vulnerabilidade**: Definição de testes para identificar vulnerabilidades comuns (por exemplo, injeção de SQL, XSS, CSRF).
+        - **Teste de Autenticação/Autorização**: Verifique se as políticas de autenticação e autorização estão implementadas corretamente.
+        - **Teste de Penetração**: Descreva como realizar testes de penetração para avaliar a resistência do site a ataques maliciosos.
+
+  6. **Plano de Testes de Acessibilidade (PDF)**:
+      - Crie um plano para avaliar a acessibilidade do site:
+        - **Conformidade com WCAG**: Teste o site contra as diretrizes WCAG (Web Content Accessibility Guidelines) para garantir a acessibilidade para todos os usuários.
+        - **Ferramentas de Acessibilidade**: Recomende ferramentas como Axe, Lighthouse, e NVDA para realizar testes de acessibilidade.
+        - **Casos de Teste Acessíveis**: Inclua casos de teste para validar a navegação com teclado, uso de leitores de tela, e acessibilidade para pessoas com deficiências visuais e motoras.
+
+  7. **Estratégia de Teste de Regressão**:
+      - Defina uma estratégia de teste de regressão para garantir que as novas alterações no site não quebrem funcionalidades existentes:
+        - **Seleção de Casos de Teste**: Como identificar quais casos de teste devem ser incluídos no conjunto de regressão.
+        - **Automação de Regressão**: Criação de scripts de regressão automatizados que serão executados em cada build.
+        - **Planejamento de Execução**: Defina a frequência de execução dos testes de regressão (por exemplo, diariamente, em cada pull request, etc.).
+
+  8. **Documentação de Integração de APIs**:
+      - Se o site usa APIs, inclua documentação de teste para essas APIs:
+        - **Testes de API Automatizados**: Crie casos de teste para validar as respostas de APIs, usando ferramentas como Postman ou Newman.
+        - **Testes de Contrato**: Defina como garantir que as APIs respeitam os contratos esperados (por exemplo, usando Pact).
+        - **Testes de Carga em APIs**: Detalhe como realizar testes de carga especificamente para as APIs, usando ferramentas como k6.
+
+  Certifique-se de que todos os arquivos e pastas estejam organizados de forma clara e acessível para facilitar a execução e manutenção dos testes. Além disso, todos os relatórios e artefatos devem ser armazenados em locais facilmente acessíveis para revisão posterior.
