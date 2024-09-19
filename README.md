@@ -22,8 +22,8 @@ Siga os passos abaixo para instalar e configurar o projeto:
 1. **Clone o repositório**:
 
     ```bash
-    git clone https://github.com/seu-usuario/seu-repositorio.git
-    cd seu-repositorio
+    git clone https://github.com/fabioaraujoqa/ia-tests-generate.git
+    cd ia-tests-generate
     ```
 
 2. **Instale as dependências**:
@@ -51,19 +51,7 @@ Siga os passos abaixo para instalar e configurar o projeto:
 
 1. **Configurar a Instrução**:
    
-   Abra o arquivo JavaScript principal (por exemplo, `index.js` ou `geradorPlanosTeste.js`) e edite a variável `instrucao` conforme necessário para o site ou aplicação que deseja testar.
-
-   Exemplo:
-
-   ```javascript
-   const instrucao = receberInstrucao(`
-       Gerar um plano de teste completo para o site https://www.google.com.br/. O plano deve incluir:
-       1. Um documento em PDF contendo o plano de teste funcional detalhado, com casos de teste, critérios de aceitação, escopo do teste, e ambientes de teste.
-       2. Uma pasta com um projeto de automação em Cypress que valide as funcionalidades principais do site. O código deve ser funcional e estar dentro de uma pasta separada com o nome 'codigo_automacao'.
-       3. Instruções num arquivo readme.md sobre como configurar o ambiente, instalar dependências, executar o código de automação e interpretar os resultados dos testes.
-       Certifique-se de que todas as pastas e arquivos estejam organizados de forma clara para fácil acesso e execução.
-   `);
-   ```
+   Abra o arquivo instrucao.yml e edite o prompt conforme sua necessidade, inserindo um contexto e url da sua aplicação.
 
 2. **Executar o Programa**:
 
@@ -104,3 +92,5 @@ Este projeto é licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE
 ### Notas Finais
 
 Certifique-se de atualizar as instruções conforme as particularidades do seu projeto. Se houver dependências específicas ou comandos adicionais, eles devem ser incluídos na seção de instalação ou uso.
+
+Bom proveito! 
