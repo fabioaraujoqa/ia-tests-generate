@@ -35,9 +35,8 @@ function configurarHeaders(apiKey) {
 async function consultarChatGPT(instrucao, apiKey) {
     try {
         const response = await axios.post('https://api.openai.com/v1/chat/completions', {
-            model: 'gpt-3.5-turbo', // Use 'gpt-4' se tiver acesso
+            model: versaoChatGPT,
             messages: [{ role: 'user', content: instrucao }],
-            max_tokens: 1000
         }, {
             headers: configurarHeaders(apiKey)
         });
@@ -51,7 +50,7 @@ async function consultarChatGPT(instrucao, apiKey) {
 // Função para consultar a API do Gemini
 async function consultarGemini(instrucao, apiKey) {
     try {
-        const response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`, {
+        const response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/${versaoGemini}:generateContent?key=${apiKey}`, {
             contents: [
                 {
                     parts: [
@@ -96,11 +95,44 @@ async function gerarPlanoDeTeste(instrucao, apiKey, ia) {
 // Função para criar o código de automação dinâmico em Cypress
 async function gerarCodigoAutomacao(instrucao, apiKey, ia) {
     const promptCypress = `
-        Gerar código Cypress para testar o site especificado. O código deve incluir a estrutura padrão do Cypress com 'describe' e 'it'. 
-        Certifique-se de incluir testes funcionais para as funcionalidades principais do site ${instrucao}, 
-        como navegação, busca, e login, se aplicável.
-    `;
-    
+    Gere código de automação de testes usando Cypress para o site especificado: ${instrucao}. 
+    O código deve seguir as melhores práticas e incluir:
+
+    1. **Estrutura Padrão do Cypress**: Crie a estrutura básica com 'describe', 'beforeEach', e múltiplos blocos 'it'.
+        - **Describe**: Um bloco que define o conjunto de testes para uma funcionalidade específica.
+        - **BeforeEach**: Um bloco que prepara o ambiente antes de cada teste, como carregar a página inicial.
+        - **It**: Vários blocos de teste que verificam comportamentos específicos.
+
+    2. **Testes Funcionais Principais**:
+        - **Navegação**: Valide que todas as páginas principais são acessíveis a partir do menu de navegação.
+            - Teste a navegação para cada item do menu, verificando se a URL e o conteúdo da página estão corretos.
+        - **Busca**: Teste a funcionalidade de busca para diferentes termos, incluindo termos simples, complexos, e com caracteres especiais.
+            - Verifique se os resultados são relevantes e se os filtros funcionam conforme esperado.
+        - **Login/Logout**: Implemente testes para o fluxo completo de autenticação, incluindo login com credenciais válidas e inválidas.
+            - Teste a criação de uma nova conta, a recuperação de senha, e o logout.
+
+    3. **Cobertura de Cenários Específicos**:
+        - **Formulários**: Valide a submissão de formulários importantes, como o formulário de contato ou cadastro.
+            - Teste a validação de campos obrigatórios, formatos de email, e mensagens de erro apropriadas.
+        - **Interações Dinâmicas**: Teste interações com elementos dinâmicos como dropdowns, modais, e sliders.
+            - Verifique se esses elementos se comportam corretamente em diferentes estados (aberto, fechado, ativo, inativo).
+
+    4. **Tratamento de Dados e Mocking**:
+        - Utilize fixtures para carregar dados de teste em cenários como formulários ou buscas.
+        - Implemente interceptações ('cy.intercept') para simular respostas de API, especialmente em testes de login e busca.
+
+    5. **Comentários e Documentação**:
+        - Adicione comentários explicativos no código para facilitar a compreensão.
+        - Inclua uma descrição clara do que cada bloco 'it' está testando e por que.
+
+    6. **Integração com Allure**:
+        - Configure a integração com Allure para gerar relatórios detalhados de teste, se possível.
+        - Garanta que os relatórios incluam capturas de tela em caso de falhas e logs de execução.
+
+    Certifique-se de que o código gerado seja modular, reutilizável e siga as boas práticas de automação de testes.
+    O objetivo é criar um conjunto de testes que possa ser facilmente mantido e expandido conforme necessário.
+`;
+
     const conteudo = ia === 'chatgpt'
         ? await consultarChatGPT(promptCypress, apiKey)
         : await consultarGemini(promptCypress, apiKey);
@@ -175,7 +207,10 @@ const apis = {
     gemini: process.env.GEMINI_API_KEY
 };
 
-// Escolha as IAs que deseja usar: ['chatgpt'], ['gemini'], ou ['chatgpt', 'gemini']
-const iasSelecionadas = ['chatgpt', 'gemini']; // Alterar conforme necessário
+const iasSelecionadas = ['chatgpt', 'gemini']; // Escolha as IAs que deseja usar: ['chatgpt'], ['gemini'], ou ['chatgpt', 'gemini']
+const versaoChatGPT = 'gpt-3.5-turbo'; // Alterar conforme necessário: gpt-3.5-turbo | gpt-4 | gpt-4-turbo-preview
+const versaoGemini = 'gemini-1.5-flash-latest'; // Alterar conforme necessário: gemini-1.5-flash-latest | gemini-2.0-flash-latest
 
 executarPrograma(instrucao, apis, iasSelecionadas);
+
+

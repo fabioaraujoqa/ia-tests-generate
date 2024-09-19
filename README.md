@@ -1,6 +1,6 @@
 # Projeto de Geração de Planos de Teste Automatizados
 
-Este projeto é uma ferramenta que automatiza a criação de planos de teste completos, código de automação Cypress e instruções de execução usando as APIs do ChatGPT e Gemini. O objetivo é fornecer uma solução automatizada para gerar artefatos de teste para diferentes sites, permitindo validação rápida e fácil.
+Este projeto é uma ferramenta que automatiza a criação de planos de teste, código de automação Cypress e instruções de execução usando as APIs do ChatGPT e Gemini. O objetivo é fornecer uma solução automatizada para gerar artefatos de teste para diferentes sites, permitindo validação rápida e fácil.
 
 ## Funcionalidades
 

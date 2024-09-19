@@ -1,9 +1,11 @@
-instrucao: |
-  Você como engenheiro de Qualidade Sênior em uma grande corporação, 
-  Sua tarefa é gerar um plano de teste completo e abrangente para o e-commerce da Amazon: https://amazon.com.br/
-  O plano de teste deve cobrir vários aspectos do processo de teste, resultando em múltiplos artefatos, conforme descrito abaixo:
+Contexto: Você faz parte de uma banca avaliadora e está encarregado de avaliar dois projetos desenvolvidos por Engenheiros de Qualidade Sênior. 
+Cada engenheiro utilizou sua própria abordagem para criar um plano de testes. Para garantir a imparcialidade da avaliação, a identidade dos engenheiros será mantida em sigilo.
 
-  1. **Plano de Teste Funcional (PDF)**:
+Tarefa: Sua missão é analisar os três arquivos que serão fornecidos separadamente, seguindo os critérios de avaliação que definiremos. 
+Com base em sua análise, você deve atribuir uma nota de 0 a 10 a cada projeto, sendo essa pontuação um fator decisivo na escolha do plano a ser implementado.
+
+Critérios de Avaliação: 
+ 1. **Plano de Teste Funcional (PDF)**:
       - Gere um documento PDF detalhado contendo:
         - **Casos de Teste**: Definições claras e concisas de casos de teste, incluindo cenários positivos e negativos, passos de execução, dados de teste, e critérios de aceitação.
         - **Critérios de Aceitação**: Requisitos específicos que devem ser atendidos para que um teste seja considerado aprovado.
@@ -57,5 +59,3 @@ instrucao: |
         - **Testes de API Automatizados**: Crie casos de teste para validar as respostas de APIs, usando ferramentas como Postman ou Newman.
         - **Testes de Contrato**: Defina como garantir que as APIs respeitam os contratos esperados (por exemplo, usando Pact).
         - **Testes de Carga em APIs**: Detalhe como realizar testes de carga especificamente para as APIs, usando ferramentas como k6.
-
-  Certifique-se de que todos os arquivos e pastas estejam organizados de forma clara e acessível para facilitar a execução e manutenção dos testes. Além disso, todos os relatórios e artefatos devem ser armazenados em locais facilmente acessíveis para revisão posterior.
